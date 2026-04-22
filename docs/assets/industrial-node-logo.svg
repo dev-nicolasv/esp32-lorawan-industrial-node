@@ -1,56 +1,58 @@
 <svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="120" y1="80" x2="520" y2="560" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2F353D"/>
-      <stop offset="1" stop-color="#3B434D"/>
+    <linearGradient id="bg" x1="120" y1="90" x2="520" y2="550" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E2A36"/>
+      <stop offset="1" stop-color="#2E3E4D"/>
     </linearGradient>
-    <filter id="glow" x="0" y="0" width="640" height="640" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+    <linearGradient id="panel" x1="208" y1="170" x2="432" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FAFC"/>
+      <stop offset="1" stop-color="#E8EEF3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="254" y1="226" x2="438" y2="402" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A1F"/>
+      <stop offset="1" stop-color="#F04E23"/>
+    </linearGradient>
+    <filter id="softGlow" x="0" y="0" width="640" height="640" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
 
-  <circle cx="320" cy="320" r="250" fill="url(#bg)"/>
+  <circle cx="320" cy="320" r="248" fill="url(#bg)"/>
+  <circle cx="320" cy="320" r="248" stroke="#506171" stroke-width="8"/>
 
-  <g stroke="#FF6A1A" stroke-width="4" stroke-linecap="round" opacity="0.7">
-    <line x1="230" y1="270" x2="320" y2="220"/>
-    <line x1="320" y1="220" x2="420" y2="235"/>
-    <line x1="230" y1="270" x2="320" y2="340"/>
-    <line x1="320" y1="340" x2="420" y2="325"/>
+  <g opacity="0.22" stroke="#7D8C99" stroke-width="4">
+    <path d="M146 384C172 430 220 470 282 488"/>
+    <path d="M494 258C475 197 431 149 371 126"/>
   </g>
 
-  <g filter="url(#glow)">
-    <g>
-      <circle cx="230" cy="270" r="34" fill="#F4F7FA"/>
-      <circle cx="230" cy="270" r="24" fill="#FF6A1A"/>
-      <circle cx="230" cy="270" r="12" fill="#F4F7FA"/>
+  <g filter="url(#softGlow)">
+    <path d="M320 154L428 216V342L320 404L212 342V216L320 154Z" fill="url(#panel)"/>
+    <path d="M320 154L428 216V342L320 404L212 342V216L320 154Z" stroke="#D6E0E8" stroke-width="8"/>
+
+    <circle cx="320" cy="294" r="84" fill="#23313C"/>
+    <path d="M259 320C259 284.101 288.101 255 324 255C355.257 255 381.361 277.054 387.606 306.462" stroke="url(#accent)" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="320" cy="294" r="18" fill="#FF8A1F"/>
+    <path d="M320 294L373 257" stroke="#F7FAFC" stroke-width="12" stroke-linecap="round"/>
+
+    <rect x="253" y="388" width="134" height="22" rx="11" fill="#FF8A1F"/>
+    <rect x="274" y="422" width="92" height="16" rx="8" fill="#7E8C98"/>
+
+    <g stroke="#FF8A1F" stroke-width="12" stroke-linecap="round">
+      <path d="M418 240C435 249 447 266 452 286"/>
+      <path d="M442 221C467 236 485 260 492 289"/>
     </g>
 
-    <g>
-      <circle cx="320" cy="220" r="34" fill="#F4F7FA"/>
-      <circle cx="320" cy="220" r="24" fill="#FF6A1A"/>
-      <polygon points="320,209 331,220 320,231 309,220" fill="#F4F7FA"/>
-    </g>
-
-    <g>
-      <circle cx="420" cy="235" r="32" fill="#F4F7FA"/>
-      <circle cx="420" cy="235" r="22" fill="#FF6A1A"/>
-      <polygon points="420,224 429,235 420,246 411,235" fill="#F4F7FA"/>
-    </g>
-
-    <g>
-      <circle cx="320" cy="340" r="34" fill="#F4F7FA"/>
-      <circle cx="320" cy="340" r="24" fill="#FF6A1A"/>
-      <polygon points="320,329 331,340 320,351 309,340" fill="#F4F7FA"/>
-    </g>
-
-    <g>
-      <circle cx="420" cy="325" r="32" fill="#F4F7FA"/>
-      <circle cx="420" cy="325" r="22" fill="#FF6A1A"/>
-      <polygon points="420,314 429,325 420,336 411,325" fill="#F4F7FA"/>
+    <g fill="#FF8A1F">
+      <rect x="236" y="213" width="16" height="32" rx="8"/>
+      <rect x="388" y="213" width="16" height="32" rx="8"/>
+      <rect x="214" y="340" width="30" height="16" rx="8"/>
+      <rect x="396" y="340" width="30" height="16" rx="8"/>
+      <rect x="282" y="154" width="16" height="30" rx="8"/>
+      <rect x="342" y="154" width="16" height="30" rx="8"/>
     </g>
   </g>
 </svg>

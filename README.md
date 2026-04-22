@@ -12,6 +12,7 @@
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-0B5FFF?style=for-the-badge" alt="MIT License"/></a>
+  <img src="https://img.shields.io/github/actions/workflow/status/dev-nicolasv/esp32-lorawan-industrial-node/platformio.yml?branch=main&style=for-the-badge&label=Build" alt="Build status"/>
   <img src="https://img.shields.io/badge/Framework-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino"/>
   <img src="https://img.shields.io/badge/Build-PlatformIO-F5822A?style=for-the-badge&logo=platformio&logoColor=white" alt="PlatformIO"/>
   <img src="https://img.shields.io/badge/Target-ESP32-E7352C?style=for-the-badge" alt="ESP32"/>
@@ -129,6 +130,7 @@ stateDiagram-v2
 - `docs/hardware.md`: wiring and electrical integration notes
 - `docs/commissioning.md`: LoRaWAN OTAA provisioning checklist
 - `docs/power-optimization.md`: power and autonomy guidance
+- `docs/payload-decoder.js`: payload decoder for TTN / ChirpStack
 - `docs/assets/industrial-node-logo.svg`: README visual asset
 
 ## Quick Start
@@ -166,12 +168,26 @@ Expected command flow:
 
 Successful uplink ends with `+MSGHEX: Done`, then the node enters deep sleep.
 
+## Network Decoder
+
+Use [payload-decoder.js](./docs/payload-decoder.js) in The Things Stack or adapt it for ChirpStack to decode the 4-byte uplink into:
+
+- `pressure_psi`
+- `loop_current_ma`
+
 ## Power Optimization Notes
 
 - Wakeup interval defaults to 15 minutes (`esp_sleep` timer)
 - TX completion leads directly to deep sleep transition
 - `AT+LOWPOWER` is sent to the LoRa-E5 before sleeping (best effort)
 - Bounded retry policy prevents uncontrolled active-time growth
+
+## Recommended Next Improvements
+
+- Persist a lightweight session state strategy to reduce OTAA joins in battery deployments
+- Add supply-voltage measurement so the uplink can include node health, not just process value
+- Add a production `secrets` override flow for CI/local builds instead of editing credentials inline
+- Add calibration constants for the analog front-end to compensate resistor and sensor tolerance
 
 ## Useful References
 
