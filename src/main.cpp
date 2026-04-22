@@ -97,6 +97,7 @@ constexpr const char* kAppEui = LORAE5_APP_EUI;
 constexpr const char* kDevEui = LORAE5_DEV_EUI;
 constexpr const char* kAppKey = LORAE5_APP_KEY;
 constexpr uint8_t kUplinkPort = static_cast<uint8_t>(LORAE5_UPLINK_PORT);
+/** @note Credentials are expected to be injected at build time in production pipelines. */
 
 }  // namespace config
 

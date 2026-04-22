@@ -1,0 +1,56 @@
+<svg width="640" height="640" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="520" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F353D"/>
+      <stop offset="1" stop-color="#3B434D"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="640" height="640" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="320" cy="320" r="250" fill="url(#bg)"/>
+
+  <g stroke="#FF6A1A" stroke-width="4" stroke-linecap="round" opacity="0.7">
+    <line x1="230" y1="270" x2="320" y2="220"/>
+    <line x1="320" y1="220" x2="420" y2="235"/>
+    <line x1="230" y1="270" x2="320" y2="340"/>
+    <line x1="320" y1="340" x2="420" y2="325"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <g>
+      <circle cx="230" cy="270" r="34" fill="#F4F7FA"/>
+      <circle cx="230" cy="270" r="24" fill="#FF6A1A"/>
+      <circle cx="230" cy="270" r="12" fill="#F4F7FA"/>
+    </g>
+
+    <g>
+      <circle cx="320" cy="220" r="34" fill="#F4F7FA"/>
+      <circle cx="320" cy="220" r="24" fill="#FF6A1A"/>
+      <polygon points="320,209 331,220 320,231 309,220" fill="#F4F7FA"/>
+    </g>
+
+    <g>
+      <circle cx="420" cy="235" r="32" fill="#F4F7FA"/>
+      <circle cx="420" cy="235" r="22" fill="#FF6A1A"/>
+      <polygon points="420,224 429,235 420,246 411,235" fill="#F4F7FA"/>
+    </g>
+
+    <g>
+      <circle cx="320" cy="340" r="34" fill="#F4F7FA"/>
+      <circle cx="320" cy="340" r="24" fill="#FF6A1A"/>
+      <polygon points="320,329 331,340 320,351 309,340" fill="#F4F7FA"/>
+    </g>
+
+    <g>
+      <circle cx="420" cy="325" r="32" fill="#F4F7FA"/>
+      <circle cx="420" cy="325" r="22" fill="#FF6A1A"/>
+      <polygon points="420,314 429,325 420,336 411,325" fill="#F4F7FA"/>
+    </g>
+  </g>
+</svg>
